@@ -4,9 +4,10 @@ const { DateTime } = require("luxon"); /*we are loading in luxon
     */
 
 module.exports = function (eleventyConfig) {
-    // we want eleventy to grab the styles and assets folders as well
+    // we want eleventy to grab the styles, assets and admin folders as well
     eleventyConfig.addPassthroughCopy("./src/style.css");
     eleventyConfig.addPassthroughCopy("./src/assets");
+    eleventyConfig.addPassthroughCopy("./src/admin");
 
     eleventyConfig.addFilter("postDate", (dateObj) => {
         return DateTime.fromJSDate(dateObj).
